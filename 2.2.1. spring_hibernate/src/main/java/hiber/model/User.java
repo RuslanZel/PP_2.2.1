@@ -19,11 +19,10 @@ public class User {
     @Column(name = "email")
     private String email;
 
-    // Создаем зависимость @OneToOne по id
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "cars_id")
-    private Car cars_id;
+    private Car carsId;
 
     public User() {
     }
@@ -35,19 +34,20 @@ public class User {
     }
 
 
-    public User(String firstName, String lastName, String email, Car cars_id) {
+    public User(String firstName, String lastName, String email, Car carsId) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-        this.cars_id = cars_id;
+        this.carsId = carsId;
     }
 
-    public Car getСars_id() {
-        return cars_id;
+
+    public Car getCarsId() {
+        return carsId;
     }
 
-    public void setСars_id(Car cars_id) {
-        this.cars_id = cars_id;
+    public void setCarsId(Car carsId) {
+        this.carsId = carsId;
     }
 
     public Long getId() {
@@ -88,6 +88,6 @@ public class User {
                 ", Имя - " + firstName +
                 ", Фамилия - " + lastName +
                 ", email - " + email +
-                ", Авто: " + cars_id;
+                ", Авто: " + carsId;
     }
 }

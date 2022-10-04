@@ -16,11 +16,9 @@ public class Car {
     @Column
     private int series;
 
-    @OneToOne(mappedBy = "cars_id")
+    @OneToOne(mappedBy = "carsId")
     private User user;
 
-
-    // Конструктор с параметрами и без.
 
     public Car() {
     }
@@ -30,8 +28,6 @@ public class Car {
         this.series = series;
     }
 
-
-    //Геттеры и Сеттеры
 
     public Long getId() {
         return id;
@@ -65,8 +61,6 @@ public class Car {
         this.user = user;
     }
 
-
-    // toString
 
     @Override
     public String toString() {
