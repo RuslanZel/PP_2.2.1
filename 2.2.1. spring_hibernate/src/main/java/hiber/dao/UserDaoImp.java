@@ -35,7 +35,7 @@ public class UserDaoImp implements UserDao {
     @Override
     @Transactional(readOnly = true)
     public User getUserByCar(String model, int series) {
-        String userByCar = "from User as u where u.carsId.model = :model and u.carsId.series = :series";
+        String userByCar = "from User as u where u.userCar.model = :model and u.userCar.series = :series";
         TypedQuery<User> queryUserByCar = sessionFactory.getCurrentSession().createQuery(userByCar, User.class);
         queryUserByCar.setParameter("model", model);
         queryUserByCar.setParameter("series", series);

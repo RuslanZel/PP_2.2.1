@@ -16,7 +16,7 @@ public class Car {
     @Column
     private int series;
 
-    @OneToOne(mappedBy = "carsId")
+    @OneToOne(mappedBy = "userCar")
     private User user;
 
 

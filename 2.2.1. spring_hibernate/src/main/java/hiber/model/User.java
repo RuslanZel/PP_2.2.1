@@ -21,8 +21,8 @@ public class User {
 
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "cars_id")
-    private Car carsId;
+    @JoinColumn(name = "user_car")
+    private Car userCar;
 
     public User() {
     }
@@ -38,16 +38,16 @@ public class User {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-        this.carsId = carsId;
+        this.userCar = carsId;
     }
 
 
     public Car getCarsId() {
-        return carsId;
+        return userCar;
     }
 
     public void setCarsId(Car carsId) {
-        this.carsId = carsId;
+        this.userCar = carsId;
     }
 
     public Long getId() {
@@ -88,6 +88,6 @@ public class User {
                 ", Имя - " + firstName +
                 ", Фамилия - " + lastName +
                 ", email - " + email +
-                ", Авто: " + carsId;
+                ", Авто: " + userCar;
     }
 }
